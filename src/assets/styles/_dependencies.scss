@@ -6,4 +6,8 @@
 // @import "some-node-module";
 // @import "@some-company/some-node-module";
 
-// Bootstrap 5 se integrará aquí.
+// Variables propias y personalización de Bootstrap
+@import "variables";
+
+// Bootstrap 5
+@import "bootstrap/scss/bootstrap";
