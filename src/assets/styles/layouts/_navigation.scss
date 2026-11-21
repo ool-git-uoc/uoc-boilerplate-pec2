@@ -1,0 +1,58 @@
+/**
+ * Navegación principal del sitio.
+ * Implementada como un bloque BEM independiente
+ * para poder reutilizarla en todas las páginas.
+ */
+
+@use "../variables" as vars;
+@use "../functions" as fn;
+
+/**
+* BEM: Aquí tenemos ya un ejemplo bastante completo:
+* .site-navigation --> bloque 
+* .site-navigation__list --> elemento
+* .site-navigation__link -->  elemento 
+* .site-navigation__link--active --> modificador
+*/
+.site-navigation {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: fn.spacing(1);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__link {
+    display: inline-block;
+    padding: fn.spacing(1) fn.spacing(2);
+    color: vars.$color-text-light;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: vars.$border-radius;
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease;
+
+    &:hover {
+      color: vars.$color-primary;
+      background-color: vars.$color-secondary;
+    }
+
+    &:focus-visible {
+      color: vars.$color-primary;
+      background-color: vars.$color-secondary;
+      outline: 0.1875rem solid vars.$color-secondary;
+      outline-offset: 0.1875rem;
+    }
+
+    // Estado activo: así en cada página solo cambiaremos el modificador.
+    &--active {
+      color: vars.$color-primary;
+      background-color: vars.$color-secondary;
+    }
+  }
+}

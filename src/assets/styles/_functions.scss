@@ -1,0 +1,27 @@
+/**
+ * Funciones Sass propias del proyecto.
+ */
+
+@use "sass:math";
+@use "variables" as vars;
+
+/**
+ * Convierte un valor expresado en píxeles a rem.
+ *
+ * Ejemplo:
+ * rem(24) -> 1.5rem
+ */
+@function rem($pixels, $base: 16) {
+  @return math.div($pixels, $base) * 1rem;
+}
+
+/**
+ * Calcula un espaciado a partir de la unidad base
+ * definida en _variables.scss.
+ *
+ * Ejemplo:
+ * spacing(3) -> 1.5rem
+ */
+@function spacing($factor) {
+  @return $factor * vars.$spacing-unit;
+}

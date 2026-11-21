@@ -1,0 +1,87 @@
+/**
+ * Estilos base del proyecto.
+ * Define la identidad visual y los estilos globales
+ * de los elementos HTML.
+ */
+
+@use "../variables" as vars;
+@use "../functions" as fn;
+
+// ------------------------------------
+// Documento
+// Identidad general del sitio.
+// 20rem equivale a 320 px, que utilizaré como anchura mínima razonable de referencia para comprobar el responsive.
+// ------------------------------------
+
+body {
+  min-width: 20rem;
+  color: vars.$color-text;
+  background-color: vars.$color-background;
+  font-family: vars.$font-secondary;
+  font-size: fn.rem(16);
+  line-height: 1.6;
+}
+
+// ------------------------------------
+// Tipografía
+// ------------------------------------
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  color: vars.$color-primary;
+  font-family: vars.$font-primary;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: fn.rem(40);
+}
+
+h2 {
+  font-size: fn.rem(32);
+}
+
+h3 {
+  font-size: fn.rem(24);
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: fn.spacing(2);
+}
+
+// ------------------------------------
+// Enlaces
+// ------------------------------------
+
+a {
+  color: vars.$color-primary;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.15em;
+
+  &:hover {
+    color: vars.$color-primary-dark;
+  }
+
+  // nos proporciona desde el principio un indicador visible de foco para navegación por teclado, alineado con la accesibilidad.
+  &:focus-visible {
+    outline: 0.1875rem solid vars.$color-secondary;
+    outline-offset: 0.1875rem;
+  }
+}
+
+// ------------------------------------
+// Selección de texto
+// Identidad del sitio: texto blanco sobre fondo granate.
+// ------------------------------------
+
+::selection {
+  color: vars.$color-text-light;
+  background-color: vars.$color-primary;
+}

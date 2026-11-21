@@ -1,0 +1,38 @@
+/**
+ * Cabecera principal del sitio.
+ * Define la estructura y apariencia del bloque .site-header.
+ * La navegación se desarrolla en _navigation.scss.
+ */
+
+@use "../variables" as vars;
+@use "../functions" as fn;
+
+.site-header {
+  color: vars.$color-text-light;
+  background-color: vars.$color-primary;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: fn.spacing(2);
+    min-height: fn.rem(72);
+  }
+
+  &__brand {
+    color: inherit;
+    font-family: vars.$font-primary;
+    font-size: fn.rem(24);
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+
+    &:hover {
+      color: vars.$color-secondary;
+    }
+
+    &:focus-visible {
+      outline-color: vars.$color-secondary;
+    }
+  }
+}

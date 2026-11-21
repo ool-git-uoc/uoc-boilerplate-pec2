@@ -1,0 +1,38 @@
+/**
+ * Reset mínimo del proyecto.
+ * Normaliza comportamientos básicos sin interferir
+ * con los estilos de componentes ni con Bootstrap.
+ */
+
+// width y height incluyan padding y border. Nos simplificará bastante las dimensiones cuando trabajemos con Grid, Flexbox y las tarjetas.
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// Scroll suaves: nos viene para utilizar enlaces internos dentro del artículo o de alguna de las páginas.
+html {
+  scroll-behavior: smooth;
+}
+
+// Elimino el margen predeterminado del navegador. El espaciado real lo controlaré mediante fn.spacing().
+body {
+  margin: 0;
+}
+
+// Imágenes responsive: útil para los ponentes y el artículo, evita que una imagen supere el ancho disponible de su contenedor.
+img,
+picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// Hace que los controles de formulario hereden la tipografía del documento.
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
