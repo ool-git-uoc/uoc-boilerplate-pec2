@@ -1,0 +1,156 @@
+/**
+ * Página de portada.
+ *
+ * El diseño base funciona sin CSS Grid.
+ * Si el navegador soporta Grid, @supports aplica
+ * una composición avanzada tipo póster.
+ */
+
+@use "../variables" as vars;
+@use "../functions" as fn;
+
+// ------------------------------------
+// Diseño base / fallback sin Grid
+// ------------------------------------
+
+.poster {
+  padding-block: fn.spacing(6);
+  background-color: vars.$color-background;
+  container-name: poster;
+  container-type: inline-size;
+
+  &__content {
+    width: min(calc(100% - #{fn.spacing(4)}), vars.$container-max-width);
+    margin-inline: auto;
+  }
+
+  &__edition {
+    margin-bottom: fn.spacing(2);
+    color: vars.$color-secondary-dark;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    max-width: 15ch;
+    margin-bottom: fn.spacing(3);
+    font-size: clamp(fn.rem(40), 9vw, fn.rem(80));
+    line-height: 0.95;
+  }
+
+  &__tagline {
+    margin-bottom: fn.spacing(3);
+    color: vars.$color-primary;
+    font-family: vars.$font-primary;
+    font-size: fn.rem(28);
+    line-height: 1.15;
+  }
+
+  &__details {
+    margin-bottom: fn.spacing(3);
+    padding-block: fn.spacing(2);
+    border-block: 1px solid vars.$color-border;
+  }
+
+  &__date,
+  &__place {
+    margin-bottom: fn.spacing(1);
+    font-weight: 600;
+  }
+
+  &__description {
+    max-width: fn.rem(640);
+    margin-bottom: fn.spacing(3);
+    font-size: fn.rem(18);
+  }
+
+  &__actions {
+    margin-top: fn.spacing(3);
+
+    .btn {
+      margin-right: fn.spacing(1);
+      margin-bottom: fn.spacing(1);
+    }
+  }
+}
+
+// ------------------------------------
+// Mejora progresiva con CSS Grid
+// CSS básico --> página funcional
+// ¿display: grid está soportado?
+//   No → mantiene fallback
+//   Sí → activa composición Grid
+// ------------------------------------
+
+@supports (display: grid) {
+  .poster {
+    &__content {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: fn.spacing(3);
+    }
+
+    &__edition,
+    &__title,
+    &__tagline,
+    &__details,
+    &__description,
+    &__actions {
+      margin: 0;
+    }
+  }
+
+  // ------------------------------------
+  // Adaptación mediante Container Query
+  // ------------------------------------
+
+  @container poster (min-width: 48rem) {
+    .poster {
+      &__content {
+        grid-template-columns:
+          minmax(0, 2fr)
+          minmax(fn.rem(224), 1fr);
+
+        grid-template-areas:
+          "edition details"
+          "title tagline"
+          "title description"
+          "actions description";
+
+        gap: fn.spacing(4);
+        align-items: start;
+      }
+
+      &__edition {
+        grid-area: edition;
+      }
+
+      &__title {
+        grid-area: title;
+      }
+
+      &__tagline {
+        grid-area: tagline;
+        text-align: right;
+      }
+
+      &__details {
+        grid-area: details;
+        padding-block: 0;
+        padding-left: fn.spacing(3);
+        border-block: 0;
+        border-left: 1px solid vars.$color-border;
+      }
+
+      &__description {
+        grid-area: description;
+      }
+
+      &__actions {
+        grid-area: actions;
+        align-self: end;
+      }
+    }
+  }
+}

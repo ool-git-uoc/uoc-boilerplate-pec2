@@ -1,34 +1,121 @@
 <!doctype html>
 
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Letras 2026, jornadas de literatura y creación en Leganés."
+    />
+
     <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
     <!-- do not remove this line! -->
     <title>UOC Boilerplate</title>
+
+    <script type="module" src="./assets/scripts/main.js"></script>
   </head>
+
   <body>
-    <div>
-      <p>
-        This is a starter template for the Advanced HTML and CSS Tools courses
-        from the Master's Program in Multimedia Applications and the Master's
-        Program in Web App and Website Development at the Universitat Oberta de
-        Catalunya.
-      </p>
-      <p>
-        <i class="fa-solid fa-book-open" aria-hidden="true"></i>
-        Jornadas de literatura y creación
-      </p>
+    <a class="skip-link" href="#main-content">
+      Saltar al contenido principal
+    </a>
 
-      <p>
-        <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
-        12–14 de diciembre de 2026
-      </p>
+    <header class="site-header">
+      <div class="container site-header__container">
+        <a
+          class="site-header__brand"
+          href="./index.html"
+          aria-label="Letras 2026 - Inicio"
+        >
+          Letras 2026
+        </a>
 
-      <button class="btn btn-primary" type="button">Inscríbete</button>
-    </div>
-    <include src="./views/footer.html"></include>
+        <nav class="site-navigation" aria-label="Navegación principal">
+          <ul class="site-navigation__list">
+            <li>
+              <a
+                class="site-navigation__link site-navigation__link--active"
+                href="./index.html"
+                aria-current="page"
+              >
+                Inicio
+              </a>
+            </li>
+
+            <li>
+              <a class="site-navigation__link" href="./ponentes.html">
+                Ponentes
+              </a>
+            </li>
+
+            <li>
+              <a class="site-navigation__link" href="./jornadas.html">
+                Jornadas
+              </a>
+            </li>
+
+            <li>
+              <a class="site-navigation__link" href="./participa.html">
+                Participa
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="poster" aria-labelledby="poster-title">
+        <div class="poster__content">
+          <p class="poster__edition">Letras 2026</p>
+
+          <h1 class="poster__title" id="poster-title">
+            Jornadas de literatura y creación
+          </h1>
+
+          <p class="poster__tagline">
+            Escribe.<br />
+            Comparte.<br />
+            Imagina.
+          </p>
+
+          <div class="poster__details">
+            <p class="poster__date">
+              <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+              12–14 diciembre 2026
+            </p>
+
+            <p class="poster__place">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              Leganés
+            </p>
+          </div>
+
+          <p class="poster__description">
+            Tres días de charlas, talleres y encuentros alrededor de la
+            literatura y la escritura.
+          </p>
+
+          <div class="poster__actions">
+            <a class="btn btn-primary" href="./participa.html"> Participa </a>
+
+            <a class="btn btn-outline-primary" href="./jornadas.html">
+              Ver jornadas
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__container">
+        <p class="site-footer__text">&copy; 2026 Letras 2026</p>
+
+        <p class="site-footer__text">Jornadas de literatura y creación</p>
+      </div>
+    </footer>
+
     <script type="module" src="./assets/scripts/main.js"></script>
     <!-- do not remove this line! -->
   </body>
