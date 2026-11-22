@@ -1,0 +1,56 @@
+/**
+ * Formulario de participación.
+ *
+ * Complementa los componentes de formulario
+ * de Bootstrap mediante clases BEM propias.
+ */
+
+@use "../variables" as vars;
+@use "../functions" as fn;
+
+// ------------------------------------
+// Formulario
+// ------------------------------------
+
+.participation-form {
+  &__required-note {
+    margin-bottom: fn.spacing(3);
+    color: vars.$color-text-muted;
+    font-size: fn.rem(14);
+  }
+
+  &__field {
+    margin-bottom: fn.spacing(3);
+  }
+
+  &__check {
+    margin-bottom: fn.spacing(2);
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: fn.spacing(2);
+    margin-top: fn.spacing(4);
+  }
+
+  // Refuerzo del foco visible sobre
+  // controles de Bootstrap.
+  :where(.form-control, .form-select, .form-check-input):focus-visible {
+    outline: fn.rem(3) solid vars.$color-secondary;
+    outline-offset: fn.rem(2);
+  }
+}
+
+// ------------------------------------
+// Adaptación al contenedor
+// ------------------------------------
+
+@container participation (min-width: 36rem) {
+  .participation-form {
+    &__actions {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+}

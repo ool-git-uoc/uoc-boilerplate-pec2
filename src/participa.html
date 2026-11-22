@@ -1,0 +1,406 @@
+<!doctype html>
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta
+      name="description"
+      content="Participa en el concurso literario y en las actividades de Letras 2026."
+    />
+
+    <title>Participa | Letras 2026</title>
+
+    <link rel="stylesheet" href="./assets/styles/main.scss" />
+
+    <script type="module" src="./assets/scripts/main.js"></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main-content">
+      Saltar al contenido principal
+    </a>
+
+    <header class="site-header">
+      <div class="container site-header__container">
+        <a class="site-header__brand" href="./index.html"> Letras 2026 </a>
+
+        <nav class="site-navigation" aria-label="Navegación principal">
+          <ul class="site-navigation__list">
+            <li>
+              <a class="site-navigation__link" href="./index.html"> Inicio </a>
+            </li>
+
+            <li>
+              <a class="site-navigation__link" href="./ponentes.html">
+                Ponentes
+              </a>
+            </li>
+
+            <li>
+              <a class="site-navigation__link" href="./jornadas.html">
+                Jornadas
+              </a>
+            </li>
+
+            <li>
+              <a
+                class="site-navigation__link site-navigation__link--active"
+                href="./participa.html"
+                aria-current="page"
+              >
+                Participa
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" tabindex="-1">
+      <section class="participation" aria-labelledby="participation-title">
+        <!-- Presentación -->
+        <div class="participation__hero">
+          <div class="container participation__hero-container">
+            <p class="participation__eyebrow">Concurso Letras 2026</p>
+
+            <h1 class="participation__title" id="participation-title">
+              Tu historia también puede formar parte de las jornadas
+            </h1>
+
+            <p class="participation__lead">
+              Envía un relato original, comparte tu forma de entender la
+              escritura y participa en el encuentro literario de Letras 2026.
+            </p>
+
+            <button
+              class="btn btn-light"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#contest-rules-modal"
+            >
+              Consultar las bases
+            </button>
+          </div>
+        </div>
+
+        <!-- Información y formulario -->
+        <div class="container participation__main">
+          <div class="alert alert-info participation__alert" role="status">
+            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+
+            <strong>Plazo de participación:</strong>
+            puedes enviar tu propuesta hasta el 5 de diciembre de 2026.
+          </div>
+
+          <div class="participation__content">
+            <!-- Información del concurso -->
+            <div class="participation__information">
+              <section
+                class="participation__section"
+                aria-labelledby="participation-requirements"
+              >
+                <h2
+                  class="participation__heading"
+                  id="participation-requirements"
+                >
+                  Cómo participar
+                </h2>
+
+                <p>
+                  La convocatoria está dirigida a personas interesadas en la
+                  creación literaria que quieran compartir un relato breve
+                  durante las jornadas Letras 2026.
+                </p>
+
+                <ol class="participation__steps">
+                  <li>Prepara un relato original de temática libre.</li>
+
+                  <li>Comprueba que el texto no supera las 2.000 palabras.</li>
+
+                  <li>Completa el formulario de inscripción.</li>
+
+                  <li>Adjunta tu relato en formato PDF.</li>
+                </ol>
+              </section>
+
+              <aside
+                class="participation__highlight"
+                aria-labelledby="participation-highlight-title"
+              >
+                <h2
+                  class="participation__highlight-title"
+                  id="participation-highlight-title"
+                >
+                  Una oportunidad para compartir
+                </h2>
+
+                <p>
+                  Los relatos seleccionados se presentarán durante las jornadas
+                  y formarán parte de una publicación digital colectiva.
+                </p>
+              </aside>
+            </div>
+
+            <!-- Formulario -->
+            <section
+              class="participation__form-section"
+              aria-labelledby="participation-form-title"
+            >
+              <h2 class="participation__heading" id="participation-form-title">
+                Formulario de inscripción
+              </h2>
+
+              <p
+                class="participation-form__required-note"
+                id="required-fields-note"
+              >
+                Los campos marcados con
+                <span aria-hidden="true">*</span>
+                son obligatorios.
+              </p>
+
+              <form
+                class="participation-form"
+                action="#"
+                method="post"
+                enctype="multipart/form-data"
+                aria-describedby="required-fields-note"
+              >
+                <div class="participation-form__field">
+                  <label class="form-label" for="participant-name">
+                    Nombre y apellidos
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <input
+                    class="form-control"
+                    id="participant-name"
+                    name="name"
+                    type="text"
+                    autocomplete="name"
+                    required
+                  />
+                </div>
+
+                <div class="participation-form__field">
+                  <label class="form-label" for="participant-email">
+                    Correo electrónico
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <input
+                    class="form-control"
+                    id="participant-email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    required
+                  />
+                </div>
+
+                <div class="participation-form__field">
+                  <label class="form-label" for="participant-category">
+                    Categoría
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <select
+                    class="form-select"
+                    id="participant-category"
+                    name="category"
+                    required
+                  >
+                    <option value="" selected disabled>
+                      Selecciona una categoría
+                    </option>
+
+                    <option value="relato">Relato breve</option>
+
+                    <option value="microrrelato">Microrrelato</option>
+
+                    <option value="poesia">Poesía</option>
+                  </select>
+                </div>
+
+                <div class="participation-form__field">
+                  <label class="form-label" for="participant-title">
+                    Título de la obra
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <input
+                    class="form-control"
+                    id="participant-title"
+                    name="work-title"
+                    type="text"
+                    required
+                  />
+                </div>
+
+                <div class="participation-form__field">
+                  <label class="form-label" for="participant-summary">
+                    Breve presentación de la obra
+                  </label>
+
+                  <textarea
+                    class="form-control"
+                    id="participant-summary"
+                    name="summary"
+                    rows="5"
+                    maxlength="500"
+                    aria-describedby="participant-summary-help"
+                  ></textarea>
+
+                  <div class="form-text" id="participant-summary-help">
+                    Máximo 500 caracteres.
+                  </div>
+                </div>
+
+                <div class="participation-form__field">
+                  <label class="form-label" for="participant-file">
+                    Archivo de la obra
+                    <span aria-hidden="true">*</span>
+                  </label>
+
+                  <input
+                    class="form-control"
+                    id="participant-file"
+                    name="work-file"
+                    type="file"
+                    accept=".pdf,application/pdf"
+                    aria-describedby="participant-file-help"
+                    required
+                  />
+
+                  <div class="form-text" id="participant-file-help">
+                    Formato PDF. Tamaño máximo recomendado: 5 MB.
+                  </div>
+                </div>
+
+                <div class="form-check participation-form__check">
+                  <input
+                    class="form-check-input"
+                    id="participant-original-work"
+                    name="original-work"
+                    type="checkbox"
+                    required
+                  />
+
+                  <label
+                    class="form-check-label"
+                    for="participant-original-work"
+                  >
+                    Declaro que la obra es original y de mi autoría.
+                    <span aria-hidden="true">*</span>
+                  </label>
+                </div>
+
+                <div class="form-check participation-form__check">
+                  <input
+                    class="form-check-input"
+                    id="participant-privacy"
+                    name="privacy"
+                    type="checkbox"
+                    required
+                  />
+
+                  <label class="form-check-label" for="participant-privacy">
+                    He leído y acepto las condiciones de participación.
+                    <span aria-hidden="true">*</span>
+                  </label>
+                </div>
+
+                <div class="participation-form__actions">
+                  <button class="btn btn-primary" type="submit">
+                    Enviar inscripción
+                  </button>
+
+                  <button class="btn btn-outline-secondary" type="reset">
+                    Limpiar formulario
+                  </button>
+                </div>
+              </form>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__container">
+        <p class="site-footer__text">&copy; 2026 Letras 2026</p>
+
+        <p class="site-footer__text">Jornadas de literatura y creación</p>
+      </div>
+    </footer>
+
+    <!-- Modal con las bases -->
+    <div
+      class="modal fade"
+      id="contest-rules-modal"
+      tabindex="-1"
+      aria-labelledby="contest-rules-title"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="contest-rules-title">
+              Bases del concurso Letras 2026
+            </h2>
+
+            <button
+              class="btn-close"
+              type="button"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <h3 class="h6">Participantes</h3>
+
+            <p>
+              Puede participar cualquier persona interesada en la escritura y la
+              creación literaria.
+            </p>
+
+            <h3 class="h6">Obras</h3>
+
+            <p>
+              Las obras deben ser originales, estar escritas en castellano y no
+              superar las 2.000 palabras.
+            </p>
+
+            <h3 class="h6">Formato</h3>
+
+            <p>
+              Los trabajos deben enviarse en formato PDF antes de que finalice
+              el plazo de inscripción.
+            </p>
+
+            <h3 class="h6">Selección</h3>
+
+            <p>
+              La organización seleccionará los relatos que se presentarán
+              durante las jornadas Letras 2026.
+            </p>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              class="btn btn-primary"
+              type="button"
+              data-bs-dismiss="modal"
+            >
+              Entendido
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
