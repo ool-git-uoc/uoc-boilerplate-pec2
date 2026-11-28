@@ -15,11 +15,11 @@
 @layer pages {
   .article {
     padding-block: fn.spacing(6);
-    background-color: vars.$color-background;
 
     // Contexto para las container queries
     container-name: article;
     container-type: inline-size;
+    background-color: vars.$color-background;
 
     &__container {
       max-width: fn.rem(900);
@@ -32,10 +32,10 @@
 
     &__eyebrow {
       margin-bottom: fn.spacing(1);
-      color: vars.$color-secondary-dark;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      color: vars.$color-secondary-dark;
       text-transform: uppercase;
+      letter-spacing: 0.12em;
     }
 
     &__title {
@@ -48,9 +48,9 @@
     &__lead {
       max-width: fn.rem(720);
       margin-bottom: 0;
-      color: vars.$color-text-muted;
       font-size: fn.rem(20);
       line-height: 1.6;
+      color: vars.$color-text-muted;
     }
   }
 

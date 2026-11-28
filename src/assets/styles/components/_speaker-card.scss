@@ -34,34 +34,31 @@
 
   &__name {
     margin-bottom: fn.spacing(1);
-    color: vars.$color-primary;
     font-family: vars.$font-primary;
     font-size: fn.rem(24);
     line-height: 1.2;
+    color: vars.$color-primary;
   }
 
   &__role {
     margin-bottom: fn.spacing(2);
-    color: vars.$color-secondary-dark;
     font-size: fn.rem(15);
     font-weight: 700;
+    color: vars.$color-secondary-dark;
     letter-spacing: 0.03em;
   }
 
   &__bio {
     margin-bottom: 0;
-    color: vars.$color-text-muted;
     line-height: 1.6;
+    color: vars.$color-text-muted;
   }
 }
 
 // ------------------------------------
 // Tablet
-//
 // gap = spacing(3) = 1.5rem
-//
 // Dos tarjetas:
-//
 // (100% - 1 gap) / 2
 // ------------------------------------
 
@@ -75,14 +72,10 @@
 
 // ------------------------------------
 // Escritorio
-//
 // gap = spacing(4) = 2rem
-//
 // Tres tarjetas necesitan 2 gaps:
-//
 // 2 gaps × 2rem = 4rem
 // spacing(8) = 4rem
-//
 // (100% - 2 gaps) / 3
 // ------------------------------------
 

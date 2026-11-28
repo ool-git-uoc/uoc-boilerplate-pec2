@@ -12,107 +12,109 @@
 // Identidad general del sitio.
 // 20rem equivale a 320 px, que utilizaré como anchura mínima razonable de referencia para comprobar el responsive.
 // ------------------------------------
-body {
-  display: flex;
-  flex-direction: column;
-  min-width: 20rem;
+@layer base {
+  body {
+    display: flex;
+    flex-direction: column;
+    min-width: 20rem;
 
-  // Fallback
-  min-height: 100vh;
+    // Fallback
+    min-height: 100vh;
 
-  // Viewport dinámico
-  min-height: 100dvh;
+    // Viewport dinámico
+    min-height: 100dvh;
+    font-family: vars.$font-secondary;
+    font-size: fn.rem(16);
+    line-height: 1.6;
 
-  color: vars.$color-text;
-  background-color: vars.$color-background;
-  font-family: vars.$font-secondary;
-  font-size: fn.rem(16);
-  line-height: 1.6;
-}
-
-main {
-  flex: 1;
-}
-
-// ------------------------------------
-// Tipografía
-// ------------------------------------
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0;
-  color: vars.$color-primary;
-  font-family: vars.$font-primary;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-h1 {
-  font-size: fn.rem(40);
-}
-
-h2 {
-  font-size: fn.rem(32);
-}
-
-h3 {
-  font-size: fn.rem(24);
-}
-
-p {
-  margin-top: 0;
-  margin-bottom: fn.spacing(2);
-}
-
-// ------------------------------------
-// Enlaces
-// ------------------------------------
-
-a {
-  color: vars.$color-primary;
-  text-decoration-thickness: 0.08em;
-  text-underline-offset: 0.15em;
-
-  &:hover {
-    color: vars.$color-primary-dark;
+    color: vars.$color-text;
+    background-color: vars.$color-background;
   }
 
-  // nos proporciona desde el principio un indicador visible de foco para navegación por teclado, alineado con la accesibilidad.
-  &:focus-visible {
-    outline: 0.1875rem solid vars.$color-secondary;
-    outline-offset: 0.1875rem;
+  main {
+    flex: 1;
   }
-}
 
-// ------------------------------------
-// Selección de texto
-// Identidad del sitio: texto blanco sobre fondo granate.
-// ------------------------------------
+  // ------------------------------------
+  // Tipografía
+  // ------------------------------------
 
-::selection {
-  color: vars.$color-text-light;
-  background-color: vars.$color-primary;
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0;
+    font-family: vars.$font-primary;
+    font-weight: 700;
+    line-height: 1.2;
+    color: vars.$color-primary;
+  }
 
-// ------------------------------------
-// Medida de accesibilidad: permite que normalmente no ocupe espacio visual,
-// pero aparezca en cuanto una persona navegue mediante teclado.
-// ------------------------------------
-.skip-link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  padding: fn.spacing(2);
-  color: vars.$color-text-light;
-  background-color: vars.$color-primary;
-  transform: translateY(-100%);
+  h1 {
+    font-size: fn.rem(40);
+  }
 
-  &:focus {
-    transform: translateY(0);
+  h2 {
+    font-size: fn.rem(32);
+  }
+
+  h3 {
+    font-size: fn.rem(24);
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: fn.spacing(2);
+  }
+
+  // ------------------------------------
+  // Enlaces
+  // ------------------------------------
+
+  a {
+    color: vars.$color-primary;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.15em;
+
+    &:hover {
+      color: vars.$color-primary-dark;
+    }
+
+    // nos proporciona desde el principio un indicador visible de foco para navegación por teclado, alineado con la accesibilidad.
+    &:focus-visible {
+      outline: 0.1875rem solid vars.$color-secondary;
+      outline-offset: 0.1875rem;
+    }
+  }
+
+  // ------------------------------------
+  // Selección de texto
+  // Identidad del sitio: texto blanco sobre fondo granate.
+  // ------------------------------------
+
+  ::selection {
+    color: vars.$color-text-light;
+    background-color: vars.$color-primary;
+  }
+
+  // ------------------------------------
+  // Medida de accesibilidad: permite que normalmente no ocupe espacio visual,
+  // pero aparezca en cuanto una persona navegue mediante teclado.
+  // ------------------------------------
+  .skip-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: fn.spacing(2);
+    color: vars.$color-text-light;
+    background-color: vars.$color-primary;
+    transform: translateY(-100%);
+
+    &:focus {
+      transform: translateY(0);
+    }
   }
 }

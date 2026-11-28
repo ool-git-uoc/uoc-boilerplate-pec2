@@ -15,8 +15,8 @@
   .participation-form {
     &__required-note {
       margin-bottom: fn.spacing(3);
-      color: vars.$color-text-muted;
       font-size: fn.rem(14);
+      color: vars.$color-text-muted;
     }
 
     &__field {

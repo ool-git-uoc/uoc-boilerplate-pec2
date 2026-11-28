@@ -18,19 +18,19 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
+    gap: fn.spacing(1);
     align-items: center;
     justify-content: flex-end;
-    gap: fn.spacing(1);
-    margin: 0;
     padding: 0;
+    margin: 0;
     list-style: none;
   }
 
   &__link {
     display: inline-block;
     padding: fn.spacing(1) fn.spacing(2);
-    color: vars.$color-text-light;
     font-weight: 600;
+    color: vars.$color-text-light;
     text-decoration: none;
     border-radius: vars.$radius-default;
     transition:
@@ -44,9 +44,9 @@
 
     &:focus-visible {
       color: vars.$color-primary;
-      background-color: vars.$color-secondary;
       outline: 0.1875rem solid vars.$color-secondary;
       outline-offset: 0.1875rem;
+      background-color: vars.$color-secondary;
     }
 
     // Estado activo: así en cada página solo cambiaremos el modificador.
