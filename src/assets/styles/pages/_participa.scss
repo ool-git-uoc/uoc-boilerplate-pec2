@@ -15,183 +15,184 @@
 // ------------------------------------
 // Página
 // ------------------------------------
-
-.participation {
-  background-color: vars.$color-background;
-
-  // Contexto para las container queries
-  // y para las unidades cqw.
-  container-name: participation;
-  container-type: inline-size;
-
-  &__hero {
-    // Fallback para navegadores sin dvh
-    min-height: 50vh;
-    padding-block: fn.spacing(6);
-    color: vars.$color-text-light;
-    background-color: vars.$color-primary;
-
-    // Unidad dinámica del viewport
-    min-height: 50dvh;
-  }
-
-  &__hero-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: inherit;
-  }
-
-  &__eyebrow {
-    margin-bottom: fn.spacing(1);
-    color: vars.$color-secondary;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-
-  &__title {
-    max-width: 17ch;
-    margin-bottom: fn.spacing(3);
-    color: vars.$color-text-light;
-    // Fallback si cqw no está disponible
-    font-size: clamp(fn.rem(36), 7vw, fn.rem(64));
-
-    line-height: 1;
-  }
-
-  &__lead {
-    max-width: fn.rem(720);
-    margin-bottom: fn.spacing(3);
-    font-size: fn.rem(20);
-    line-height: 1.6;
-  }
-
-  &__main {
-    padding-block: fn.spacing(6);
-  }
-
-  &__alert {
-    margin-bottom: fn.spacing(5);
-  }
-
-  &__content {
-    display: block;
-  }
-
-  &__information {
-    margin-bottom: fn.spacing(6);
-  }
-
-  &__section {
-    margin-bottom: fn.spacing(5);
-  }
-
-  &__heading {
-    margin-bottom: fn.spacing(2);
-    font-size: fn.rem(30);
-    line-height: 1.2;
-  }
-
-  &__steps {
-    margin-bottom: 0;
-    padding-left: fn.spacing(4);
-
-    li {
-      padding-left: fn.spacing(1);
-
-      & + li {
-        margin-top: fn.spacing(1);
-      }
-
-      &::marker {
-        color: vars.$color-secondary-dark;
-        font-weight: 700;
-      }
-    }
-  }
-
-  &__highlight {
-    padding: fn.spacing(4);
-    color: vars.$color-text-light;
-    background-color: vars.$color-primary;
-    border-radius: vars.$radius-large;
-  }
-
-  &__highlight-title {
-    margin-bottom: fn.spacing(2);
-    color: inherit;
-    font-size: fn.rem(26);
-  }
-
-  &__highlight p {
-    margin-bottom: 0;
-  }
-
-  &__form-section {
-    padding: fn.spacing(3);
-    background-color: vars.$color-surface;
-    border: 1px solid vars.$color-border;
-    border-radius: vars.$radius-large;
-  }
-}
-
-// ------------------------------------
-// Unidad relativa al contenedor
-// ------------------------------------
-
-@supports (font-size: 1cqw) {
+@layer pages {
   .participation {
-    &__title {
-      font-size: clamp(fn.rem(36), 6cqw, fn.rem(64));
-    }
-  }
-}
+    background-color: vars.$color-background;
 
-// ------------------------------------
-// Espacio de color Display P3
-// ------------------------------------
+    // Contexto para las container queries
+    // y para las unidades cqw.
+    container-name: participation;
+    container-type: inline-size;
 
-@supports (color: color(display-p3 1 0 0)) {
-  .participation {
-    &__hero,
-    &__highlight {
-      background-color: color(display-p3 0.48 0.12 0.19);
-    }
-  }
-}
-
-// ------------------------------------
-// Container query
-// ------------------------------------
-
-@container participation (min-width: 50rem) {
-  .participation {
     &__hero {
-      padding-block: fn.spacing(8);
+      // Fallback para navegadores sin dvh
+      min-height: 50vh;
+      padding-block: fn.spacing(6);
+      color: vars.$color-text-light;
+      background-color: vars.$color-primary;
+
+      // Unidad dinámica del viewport
+      min-height: 50dvh;
+    }
+
+    &__hero-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: inherit;
+    }
+
+    &__eyebrow {
+      margin-bottom: fn.spacing(1);
+      color: vars.$color-secondary;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    &__title {
+      max-width: 17ch;
+      margin-bottom: fn.spacing(3);
+      color: vars.$color-text-light;
+      // Fallback si cqw no está disponible
+      font-size: clamp(fn.rem(36), 7vw, fn.rem(64));
+
+      line-height: 1;
     }
 
     &__lead {
-      font-size: fn.rem(22);
+      max-width: fn.rem(720);
+      margin-bottom: fn.spacing(3);
+      font-size: fn.rem(20);
+      line-height: 1.6;
+    }
+
+    &__main {
+      padding-block: fn.spacing(6);
+    }
+
+    &__alert {
+      margin-bottom: fn.spacing(5);
     }
 
     &__content {
-      display: grid;
-
-      grid-template-columns:
-        minmax(0, 1fr)
-        minmax(fn.rem(320), 0.8fr);
-
-      gap: fn.spacing(6);
-      align-items: start;
+      display: block;
     }
 
     &__information {
+      margin-bottom: fn.spacing(6);
+    }
+
+    &__section {
+      margin-bottom: fn.spacing(5);
+    }
+
+    &__heading {
+      margin-bottom: fn.spacing(2);
+      font-size: fn.rem(30);
+      line-height: 1.2;
+    }
+
+    &__steps {
+      margin-bottom: 0;
+      padding-left: fn.spacing(4);
+
+      li {
+        padding-left: fn.spacing(1);
+
+        & + li {
+          margin-top: fn.spacing(1);
+        }
+
+        &::marker {
+          color: vars.$color-secondary-dark;
+          font-weight: 700;
+        }
+      }
+    }
+
+    &__highlight {
+      padding: fn.spacing(4);
+      color: vars.$color-text-light;
+      background-color: vars.$color-primary;
+      border-radius: vars.$radius-large;
+    }
+
+    &__highlight-title {
+      margin-bottom: fn.spacing(2);
+      color: inherit;
+      font-size: fn.rem(26);
+    }
+
+    &__highlight p {
       margin-bottom: 0;
     }
 
     &__form-section {
-      padding: fn.spacing(4);
+      padding: fn.spacing(3);
+      background-color: vars.$color-surface;
+      border: 1px solid vars.$color-border;
+      border-radius: vars.$radius-large;
+    }
+  }
+
+  // ------------------------------------
+  // Unidad relativa al contenedor
+  // ------------------------------------
+
+  @supports (font-size: 1cqw) {
+    .participation {
+      &__title {
+        font-size: clamp(fn.rem(36), 6cqw, fn.rem(64));
+      }
+    }
+  }
+
+  // ------------------------------------
+  // Espacio de color Display P3
+  // ------------------------------------
+
+  @supports (color: color(display-p3 1 0 0)) {
+    .participation {
+      &__hero,
+      &__highlight {
+        background-color: color(display-p3 0.48 0.12 0.19);
+      }
+    }
+  }
+
+  // ------------------------------------
+  // Container query
+  // ------------------------------------
+
+  @container participation (min-width: 50rem) {
+    .participation {
+      &__hero {
+        padding-block: fn.spacing(8);
+      }
+
+      &__lead {
+        font-size: fn.rem(22);
+      }
+
+      &__content {
+        display: grid;
+
+        grid-template-columns:
+          minmax(0, 1fr)
+          minmax(fn.rem(320), 0.8fr);
+
+        gap: fn.spacing(6);
+        align-items: start;
+      }
+
+      &__information {
+        margin-bottom: 0;
+      }
+
+      &__form-section {
+        padding: fn.spacing(4);
+      }
     }
   }
 }

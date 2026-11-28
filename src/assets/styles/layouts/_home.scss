@@ -3,6 +3,8 @@
  * Este archivo únicamente carga los parciales utilizados
  * por las cuatro páginas del sitio.
  */
+@use "../layers";
+
 // Base
 @use "../base/reset";
 @use "../base/base";

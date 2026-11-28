@@ -1,0 +1,8 @@
+/**
+ * Orden global de las capas de cascada.
+ *
+ * Las capas posteriores tienen prioridad
+ * sobre las anteriores.
+ */
+
+@layer base, components, pages;

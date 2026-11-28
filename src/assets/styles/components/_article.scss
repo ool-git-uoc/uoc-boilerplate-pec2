@@ -14,138 +14,139 @@
 // ------------------------------------
 // Cuerpo del artículo
 // ------------------------------------
-
-.article {
-  &__body {
-    max-width: fn.rem(760);
-    margin-inline: auto;
-    color: vars.$color-text;
-    font-size: fn.rem(18);
-    line-height: 1.75;
-  }
-
-  // ------------------------------------
-  // Ritmo vertical común
-  //
-  // :where() permite agrupar elementos
-  // sin aumentar la especificidad.
-  // ------------------------------------
-
-  &__body :where(p, ul, blockquote, figure) {
-    margin-block: 0 fn.spacing(3);
-  }
-
-  // ------------------------------------
-  // Fotografías
-  // ------------------------------------
-
-  &__figure {
-    margin-inline: 0;
-  }
-
-  &__image {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 3 / 2;
-    object-fit: cover;
-    border-radius: vars.$radius-large;
-  }
-
-  &__caption {
-    margin-top: fn.spacing(1);
-    color: vars.$color-text-muted;
-    font-size: fn.rem(14);
-    line-height: 1.5;
-  }
-
-  // ------------------------------------
-  // Figura con pie de fotografía
-  //
-  // :has() selecciona únicamente las
-  // figuras que contienen un figcaption.
-  // ------------------------------------
-
-  &__figure:has(> .article__caption) {
-    padding-bottom: fn.spacing(2);
-    border-bottom: 1px solid vars.$color-border;
-  }
-
-  // ------------------------------------
-  // Cita destacada
-  // ------------------------------------
-
-  &__quote {
-    padding: fn.spacing(3);
-    color: vars.$color-primary-dark;
-    background-color: vars.$color-surface;
-    border-left: fn.rem(4) solid vars.$color-secondary;
-    font-family: vars.$font-primary;
-    font-size: fn.rem(24);
-    line-height: 1.45;
-
-    p {
-      margin: 0;
-    }
-  }
-
-  // ------------------------------------
-  // Secciones internas
-  // ------------------------------------
-
-  &__section {
-    margin-block: fn.spacing(5);
-  }
-
-  &__heading {
-    margin-bottom: fn.spacing(2);
-    font-size: fn.rem(30);
-    line-height: 1.2;
-  }
-
-  // ------------------------------------
-  // Lista
-  // ------------------------------------
-
-  &__list {
-    padding-left: fn.spacing(4);
-
-    li {
-      padding-left: fn.spacing(1);
-
-      & + li {
-        margin-top: fn.spacing(1);
-      }
-
-      &::marker {
-        color: vars.$color-secondary-dark;
-      }
-    }
-  }
-}
-
-// ------------------------------------
-// Adaptación mediante Container Query
-// ------------------------------------
-
-@container article (min-width: 48rem) {
+@layer components {
   .article {
-    // En contenedores amplios las imágenes
-    // sobresalen 2rem por cada lado de la
-    // columna principal de lectura.
-    &__figure {
-      width: calc(100% + 4rem);
-      margin-inline: -2rem;
+    &__body {
+      max-width: fn.rem(760);
+      margin-inline: auto;
+      color: vars.$color-text;
+      font-size: fn.rem(18);
+      line-height: 1.75;
     }
+
+    // ------------------------------------
+    // Ritmo vertical común
+    //
+    // :where() permite agrupar elementos
+    // sin aumentar la especificidad.
+    // ------------------------------------
+
+    &__body :where(p, ul, blockquote, figure) {
+      margin-block: 0 fn.spacing(3);
+    }
+
+    // ------------------------------------
+    // Fotografías
+    // ------------------------------------
+
+    &__figure {
+      margin-inline: 0;
+    }
+
+    &__image {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      border-radius: vars.$radius-large;
+    }
+
+    &__caption {
+      margin-top: fn.spacing(1);
+      color: vars.$color-text-muted;
+      font-size: fn.rem(14);
+      line-height: 1.5;
+    }
+
+    // ------------------------------------
+    // Figura con pie de fotografía
+    //
+    // :has() selecciona únicamente las
+    // figuras que contienen un figcaption.
+    // ------------------------------------
+
+    &__figure:has(> .article__caption) {
+      padding-bottom: fn.spacing(2);
+      border-bottom: 1px solid vars.$color-border;
+    }
+
+    // ------------------------------------
+    // Cita destacada
+    // ------------------------------------
 
     &__quote {
-      margin-block: fn.spacing(5);
-      padding: fn.spacing(4);
-      font-size: fn.rem(28);
+      padding: fn.spacing(3);
+      color: vars.$color-primary-dark;
+      background-color: vars.$color-surface;
+      border-left: fn.rem(4) solid vars.$color-secondary;
+      font-family: vars.$font-primary;
+      font-size: fn.rem(24);
+      line-height: 1.45;
+
+      p {
+        margin: 0;
+      }
     }
 
+    // ------------------------------------
+    // Secciones internas
+    // ------------------------------------
+
     &__section {
-      margin-block: fn.spacing(6);
+      margin-block: fn.spacing(5);
+    }
+
+    &__heading {
+      margin-bottom: fn.spacing(2);
+      font-size: fn.rem(30);
+      line-height: 1.2;
+    }
+
+    // ------------------------------------
+    // Lista
+    // ------------------------------------
+
+    &__list {
+      padding-left: fn.spacing(4);
+
+      li {
+        padding-left: fn.spacing(1);
+
+        & + li {
+          margin-top: fn.spacing(1);
+        }
+
+        &::marker {
+          color: vars.$color-secondary-dark;
+        }
+      }
+    }
+  }
+
+  // ------------------------------------
+  // Adaptación mediante Container Query
+  // ------------------------------------
+
+  @container article (min-width: 48rem) {
+    .article {
+      // En contenedores amplios las imágenes
+      // sobresalen 2rem por cada lado de la
+      // columna principal de lectura.
+      &__figure {
+        width: calc(100% + 4rem);
+        margin-inline: -2rem;
+      }
+
+      &__quote {
+        margin-block: fn.spacing(5);
+        padding: fn.spacing(4);
+        font-size: fn.rem(28);
+      }
+
+      &__section {
+        margin-block: fn.spacing(6);
+      }
     }
   }
 }
