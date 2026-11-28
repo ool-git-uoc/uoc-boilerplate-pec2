@@ -18,6 +18,13 @@
     // Además, mantenerlo vertical y centrado funciona igual en móvil, tableta y escritorio.
     flex-direction: column;
     align-items: center;
+    gap: fn.spacing(3);
+    text-align: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
     gap: fn.spacing(1);
     text-align: center;
   }
@@ -25,6 +32,39 @@
   &__text {
     margin: 0;
     font-size: fn.rem(14);
+  }
+
+  &__back-to-top {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+
+    width: fn.rem(44);
+    height: fn.rem(44);
+
+    color: vars.$color-primary-dark;
+    background-color: vars.$color-secondary;
+    border-radius: 50%;
+    text-decoration: none;
+
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease,
+      transform 0.2s ease;
+
+    &:hover {
+      color: vars.$color-primary;
+      background-color: vars.$color-text-light;
+      transform: translateY(fn.rem(-3));
+    }
+
+    &:focus-visible {
+      color: vars.$color-primary;
+      background-color: vars.$color-text-light;
+      outline: fn.rem(3) solid vars.$color-secondary;
+      outline-offset: fn.rem(3);
+    }
   }
 
   &__link {
@@ -40,6 +80,35 @@
     &:focus-visible {
       outline: 0.1875rem solid vars.$color-secondary;
       outline-offset: 0.1875rem;
+    }
+  }
+}
+
+// ------------------------------------
+// Tablet y escritorio
+// ------------------------------------
+
+@media (min-width: vars.$breakpoint-tablet) {
+  .site-footer {
+    &__container {
+      display: grid;
+      grid-template-columns:
+        fn.rem(44)
+        1fr
+        fn.rem(44);
+
+      align-items: center;
+      gap: fn.spacing(3);
+    }
+
+    &__content {
+      grid-column: 2;
+      text-align: center;
+    }
+
+    &__back-to-top {
+      grid-column: 3;
+      justify-self: end;
     }
   }
 }

@@ -18,46 +18,12 @@
     <script type="module" src="./assets/scripts/main.js"></script>
   </head>
 
-  <body>
+  <body id="top">
     <a class="skip-link" href="#main-content">
       Saltar al contenido principal
     </a>
 
-    <header class="site-header">
-      <div class="container site-header__container">
-        <a class="site-header__brand" href="./index.html"> Letras 2026 </a>
-
-        <nav class="site-navigation" aria-label="Navegación principal">
-          <ul class="site-navigation__list">
-            <li>
-              <a class="site-navigation__link" href="./index.html"> Inicio </a>
-            </li>
-
-            <li>
-              <a
-                class="site-navigation__link site-navigation__link--active"
-                href="./ponentes.html"
-                aria-current="page"
-              >
-                Ponentes
-              </a>
-            </li>
-
-            <li>
-              <a class="site-navigation__link" href="./jornadas.html">
-                Jornadas
-              </a>
-            </li>
-
-            <li>
-              <a class="site-navigation__link" href="./participa.html">
-                Participa
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <include src="./views/header.html"></include>
 
     <main id="main-content" tabindex="-1">
       <section class="speakers" aria-labelledby="speakers-title">
@@ -240,12 +206,6 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container site-footer__container">
-        <p class="site-footer__text">&copy; 2026 Letras 2026</p>
-
-        <p class="site-footer__text">Jornadas de literatura y creación</p>
-      </div>
-    </footer>
+    <include src="./views/footer.html"></include>
   </body>
 </html>

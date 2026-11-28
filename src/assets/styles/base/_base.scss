@@ -12,14 +12,26 @@
 // Identidad general del sitio.
 // 20rem equivale a 320 px, que utilizaré como anchura mínima razonable de referencia para comprobar el responsive.
 // ------------------------------------
-
 body {
+  display: flex;
+  flex-direction: column;
   min-width: 20rem;
+
+  // Fallback
+  min-height: 100vh;
+
+  // Viewport dinámico
+  min-height: 100dvh;
+
   color: vars.$color-text;
   background-color: vars.$color-background;
   font-family: vars.$font-secondary;
   font-size: fn.rem(16);
   line-height: 1.6;
+}
+
+main {
+  flex: 1;
 }
 
 // ------------------------------------
