@@ -17,7 +17,9 @@
 // ------------------------------------
 @layer pages {
   .participation {
-    --bs-heading-color: #{vars.$color-text-light};
+    // Personalización local del color utilizado
+    // por los encabezados de Bootstrap.
+    --bs-heading-color: #{vars.$color-primary};
     // Contexto para las container queries
     // y para las unidades cqw.
     container-name: participation;
@@ -25,6 +27,9 @@
     background-color: vars.$color-background;
 
     &__hero {
+      // Los encabezados situados sobre el hero
+      // necesitan un color claro.
+      --bs-heading-color: #{vars.$color-text-light};
       // Fallback para navegadores sin dvh
       min-height: 50vh;
 
